@@ -1,24 +1,30 @@
 import { useEffect, useRef, useState } from "react";
 
 const techStack = [
-  { name: "React", icon: "⚛️", size: "lg" },
-  { name: "TypeScript", icon: "🔷", size: "lg" },
-  { name: "JavaScript", icon: "🟨", size: "md" },
-  { name: "Node.js", icon: "🟩", size: "md" },
-  { name: "Python", icon: "🐍", size: "md" },
-  { name: "CSS", icon: "🎨", size: "sm" },
-  { name: "Tailwind", icon: "💨", size: "sm" },
-  { name: "Git", icon: "🔀", size: "sm" },
-  { name: "PostgreSQL", icon: "🐘", size: "sm" },
-  { name: "Docker", icon: "🐳", size: "sm" },
-  { name: "Figma", icon: "🎯", size: "sm" },
-  { name: "REST APIs", icon: "🔗", size: "sm" },
+  { name: "React", color: "#61DAFB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", size: "lg" },
+  { name: "TypeScript", color: "#3178C6", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", size: "lg" },
+  { name: "JavaScript", color: "#F7DF1E", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", size: "md" },
+  { name: "Node.js", color: "#339933", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", size: "md" },
+  { name: "Python", color: "#3776AB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", size: "md" },
+  { name: "CSS", color: "#1572B6", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", size: "sm" },
+  { name: "Tailwind", color: "#06B6D4", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg", size: "sm" },
+  { name: "Git", color: "#F05032", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg", size: "sm" },
+  { name: "PostgreSQL", color: "#4169E1", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg", size: "sm" },
+  { name: "Docker", color: "#2496ED", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg", size: "sm" },
+  { name: "Figma", color: "#F24E1E", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg", size: "sm" },
+  { name: "Next.js", color: "#000000", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", size: "sm" },
 ];
 
 const sizeMap = {
-  lg: "w-20 h-20 text-3xl",
-  md: "w-16 h-16 text-2xl",
-  sm: "w-14 h-14 text-xl",
+  lg: "w-20 h-20",
+  md: "w-16 h-16",
+  sm: "w-14 h-14",
+};
+
+const imgSizeMap = {
+  lg: "w-10 h-10",
+  md: "w-8 h-8",
+  sm: "w-7 h-7",
 };
 
 const SkillsSection = () => {
@@ -45,7 +51,7 @@ const SkillsSection = () => {
           <div className="section-divider mx-auto mb-8" />
         </div>
 
-        {/* Orbital grid */}
+        {/* Tech grid */}
         <div ref={containerRef} className="relative max-w-4xl mx-auto">
           <div className="grid grid-cols-3 md:grid-cols-4 gap-6 justify-items-center">
             {techStack.map((tech, i) => (
@@ -57,7 +63,12 @@ const SkillsSection = () => {
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
                 <div className={`${sizeMap[tech.size as keyof typeof sizeMap]} rounded-2xl glass-card flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-default`}>
-                  {tech.icon}
+                  <img
+                    src={tech.logo}
+                    alt={tech.name}
+                    className={`${imgSizeMap[tech.size as keyof typeof imgSizeMap]}`}
+                    loading="lazy"
+                  />
                 </div>
                 <span className="font-mono text-[10px] tracking-wider text-muted-foreground uppercase">
                   {tech.name}
