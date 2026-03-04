@@ -9,7 +9,7 @@ const HeroSection = () => {
 
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight mb-4 animate-fade-in-up">
           Hi, ich bin{" "}
-          <span className="text-gradient-accent">Dein Name</span>
+          <span className="text-gradient-accent">Rafein Abdulla</span>
         </h1>
 
         <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto mb-10 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
