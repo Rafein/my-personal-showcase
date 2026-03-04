@@ -1,31 +1,43 @@
-import heroBg from "@/assets/hero-bg.jpg";
-
 const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Parallax Background */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-fixed"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      />
-      <div className="absolute inset-0 bg-background/60" />
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden dot-pattern">
+      <div className="relative z-10 text-center px-6 max-w-3xl mx-auto pt-24">
+        {/* Avatar placeholder */}
+        <div className="w-28 h-28 mx-auto mb-8 rounded-full bg-secondary border-4 border-primary/20 flex items-center justify-center text-5xl animate-float">
+          👨‍💻
+        </div>
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        <p className="font-display text-sm tracking-[0.3em] uppercase text-primary mb-6 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-          Willkommen
-        </p>
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-tight mb-6 animate-fade-in-up">
-          <span className="text-foreground">Dein Name</span>
-          <br />
-          <span className="text-gradient-gold">Hier.</span>
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight mb-4 animate-fade-in-up">
+          Hi, ich bin{" "}
+          <span className="text-gradient-accent">Dein Name</span>
         </h1>
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-          Developer · Designer · Creator
+
+        <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto mb-10 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+          Fullstack Developer mit Leidenschaft für moderne Web-Technologien, 
+          sauberen Code und kreative Lösungen.
         </p>
+
+        {/* Quick info cards */}
+        <div className="glass-card p-8 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { emoji: "🎓", label: "Student" },
+              { emoji: "💻", label: "Developer" },
+              { emoji: "🚀", label: "Creator" },
+              { emoji: "🌍", label: "Deutschland" },
+            ].map((item) => (
+              <div key={item.label} className="text-center">
+                <span className="text-2xl block mb-1">{item.emoji}</span>
+                <span className="text-xs font-medium text-muted-foreground">{item.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Scroll CTA */}
         <button
           onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
-          className="animate-fade-in-up inline-flex items-center gap-2 font-display text-sm tracking-wider uppercase text-primary border border-primary/30 px-8 py-3 rounded-full hover:bg-primary/10 transition-all duration-300"
+          className="mt-12 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors animate-fade-in-up"
           style={{ animationDelay: "0.6s" }}
         >
           Mehr erfahren
@@ -33,13 +45,6 @@ const HeroSection = () => {
             <path d="M12 5v14M19 12l-7 7-7-7" />
           </svg>
         </button>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in" style={{ animationDelay: "1s" }}>
-        <div className="w-5 h-8 border-2 border-muted-foreground/30 rounded-full flex justify-center">
-          <div className="w-1 h-2 bg-primary rounded-full mt-1 animate-bounce" />
-        </div>
       </div>
     </section>
   );

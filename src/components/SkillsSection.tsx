@@ -1,70 +1,76 @@
-const skillCategories = [
-  {
-    title: "Frontend",
-    skills: [
-      { name: "React", level: 90 },
-      { name: "TypeScript", level: 85 },
-      { name: "CSS/Tailwind", level: 88 },
-      { name: "JavaScript", level: 92 },
-    ],
-  },
-  {
-    title: "Backend",
-    skills: [
-      { name: "Node.js", level: 80 },
-      { name: "Python", level: 75 },
-      { name: "PostgreSQL", level: 70 },
-      { name: "REST APIs", level: 85 },
-    ],
-  },
-  {
-    title: "Tools & Sonstiges",
-    skills: [
-      { name: "Git", level: 88 },
-      { name: "Docker", level: 65 },
-      { name: "Figma", level: 70 },
-      { name: "CI/CD", level: 60 },
-    ],
-  },
+import { useEffect, useRef, useState } from "react";
+
+const techStack = [
+  { name: "React", icon: "⚛️", size: "lg" },
+  { name: "TypeScript", icon: "🔷", size: "lg" },
+  { name: "JavaScript", icon: "🟨", size: "md" },
+  { name: "Node.js", icon: "🟩", size: "md" },
+  { name: "Python", icon: "🐍", size: "md" },
+  { name: "CSS", icon: "🎨", size: "sm" },
+  { name: "Tailwind", icon: "💨", size: "sm" },
+  { name: "Git", icon: "🔀", size: "sm" },
+  { name: "PostgreSQL", icon: "🐘", size: "sm" },
+  { name: "Docker", icon: "🐳", size: "sm" },
+  { name: "Figma", icon: "🎯", size: "sm" },
+  { name: "REST APIs", icon: "🔗", size: "sm" },
 ];
 
+const sizeMap = {
+  lg: "w-20 h-20 text-3xl",
+  md: "w-16 h-16 text-2xl",
+  sm: "w-14 h-14 text-xl",
+};
+
 const SkillsSection = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.2 }
+    );
+    if (containerRef.current) observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="skills" className="relative py-32">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <p className="font-display text-sm tracking-[0.3em] uppercase text-primary mb-4">Kompetenzen</p>
+          <p className="font-mono text-xs tracking-[0.3em] uppercase text-primary mb-4">Tech Stack</p>
           <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6">
-            Meine <span className="text-gradient-gold">Skills</span>
+            My <span className="text-gradient-accent">Skills</span>
           </h2>
-          <div className="section-divider mb-8" />
+          <div className="section-divider mx-auto mb-8" />
         </div>
 
-        <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-          {skillCategories.map((category, i) => (
-            <div key={i} className="bg-card border border-border rounded-2xl p-8">
-              <h3 className="font-display text-lg font-semibold text-primary mb-6">{category.title}</h3>
-              <div className="space-y-5">
-                {category.skills.map((skill) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-sm text-foreground">{skill.name}</span>
-                      <span className="text-xs text-muted-foreground">{skill.level}%</span>
-                    </div>
-                    <div className="h-1.5 bg-secondary rounded-full overflow-hidden">
-                      <div
-                        className="h-full rounded-full transition-all duration-1000"
-                        style={{
-                          width: `${skill.level}%`,
-                          background: "linear-gradient(90deg, hsl(42 78% 55%), hsl(42 90% 65%))",
-                        }}
-                      />
-                    </div>
-                  </div>
-                ))}
+        {/* Orbital grid */}
+        <div ref={containerRef} className="relative max-w-4xl mx-auto">
+          <div className="grid grid-cols-3 md:grid-cols-4 gap-6 justify-items-center">
+            {techStack.map((tech, i) => (
+              <div
+                key={tech.name}
+                className={`flex flex-col items-center gap-2 transition-all duration-700 ${
+                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                }`}
+                style={{ transitionDelay: `${i * 80}ms` }}
+              >
+                <div className={`${sizeMap[tech.size as keyof typeof sizeMap]} rounded-2xl glass-card flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-default`}>
+                  {tech.icon}
+                </div>
+                <span className="font-mono text-[10px] tracking-wider text-muted-foreground uppercase">
+                  {tech.name}
+                </span>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* Decorative circles */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full border border-border/30" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full border border-border/20" />
+          </div>
         </div>
       </div>
     </section>
