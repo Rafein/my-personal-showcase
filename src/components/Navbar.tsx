@@ -1,27 +1,27 @@
 import { useState, useEffect } from "react";
+import { useTheme } from "@/hooks/use-theme";
+import { Sun, Moon } from "lucide-react";
 
 const navItems = ["Home", "About", "Projects", "Skills", "Other"];
 
 const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [scrolled, setScrolled] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
-
       const sections = navItems.map((item) => {
         const el = document.getElementById(item.toLowerCase());
         if (!el) return { id: item, top: 0 };
         return { id: item, top: el.getBoundingClientRect().top };
       });
-
       const current = sections.reduce((prev, curr) =>
         Math.abs(curr.top) < Math.abs(prev.top) ? curr : prev
       );
       setActive(current.id);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -31,57 +31,32 @@ const Navbar = () => {
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "bg-background/80 backdrop-blur-lg border-b border-border" : "bg-transparent"
-      }`}
-    >
-      <div className="container mx-auto flex items-center justify-between py-4 px-6">
-        <span className="font-display text-xl font-bold text-gradient-gold">Portfolio</span>
-        <ul className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
-            <li key={item}>
-              <button
-                onClick={() => scrollTo(item)}
-                className={`font-display text-sm tracking-wider uppercase transition-colors duration-300 ${
-                  active === item ? "text-primary" : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {item}
-              </button>
-            </li>
-          ))}
-        </ul>
+    <nav className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-500`}>
+      <div className="flex items-center gap-6">
+        {/* Theme toggle */}
         <button
-          className="md:hidden text-foreground"
-          onClick={() => {
-            const menu = document.getElementById("mobile-menu");
-            menu?.classList.toggle("hidden");
-          }}
+          onClick={toggleTheme}
+          className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-primary hover:scale-110 transition-transform"
         >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M3 12h18M3 6h18M3 18h18" />
-          </svg>
+          {theme === "light" ? <Sun size={18} /> : <Moon size={18} />}
         </button>
-      </div>
-      <div id="mobile-menu" className="hidden md:hidden bg-background/95 backdrop-blur-lg border-b border-border">
-        <ul className="flex flex-col items-center gap-4 py-4">
+
+        {/* Nav pills */}
+        <div className="glass-card px-2 py-2 flex items-center gap-1">
           {navItems.map((item) => (
-            <li key={item}>
-              <button
-                onClick={() => {
-                  scrollTo(item);
-                  document.getElementById("mobile-menu")?.classList.add("hidden");
-                }}
-                className={`font-display text-sm tracking-wider uppercase ${
-                  active === item ? "text-primary" : "text-muted-foreground"
-                }`}
-              >
-                {item}
-              </button>
-            </li>
+            <button
+              key={item}
+              onClick={() => scrollTo(item)}
+              className={`text-sm font-medium px-4 py-2 rounded-xl transition-all duration-300 ${
+                active === item
+                  ? "bg-primary text-primary-foreground shadow-md"
+                  : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
+              }`}
+            >
+              {item}
+            </button>
           ))}
-        </ul>
+        </div>
       </div>
     </nav>
   );
