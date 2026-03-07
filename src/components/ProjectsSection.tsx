@@ -73,8 +73,14 @@ const ProjectsSection = () => {
                 <span className="w-8 h-px bg-border" />
                 <span className="font-mono text-xs tracking-wider text-muted-foreground">{project.type}</span>
               </div>
-              <div className="flex items-center gap-2">
-                <h3 className="font-display text-2xl font-bold text-foreground">{project.title}</h3>
+              <div className="flex items-center gap-2 mb-4">
+                {project.link ? (
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="font-display text-2xl font-bold text-foreground hover:text-primary transition-colors">
+                    {project.title}
+                  </a>
+                ) : (
+                  <h3 className="font-display text-2xl font-bold text-foreground">{project.title}</h3>
+                )}
                 {project.number === "01" && (
                   <img src={godotIcon} alt="Godot" className="w-7 h-7 object-contain" />
                 )}
