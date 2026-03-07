@@ -2,6 +2,7 @@ import { useLanguage } from "@/hooks/use-language";
 import gegnerFliegend from "@/assets/gegner-fliegend.png";
 import profSprite from "@/assets/prof-sprite.png";
 import slimePurple from "@/assets/slime-purple.png";
+import godotIcon from "@/assets/godot-icon.png";
 
 const ProjectsSection = () => {
   const { lang, t } = useLanguage();
