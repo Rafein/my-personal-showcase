@@ -98,7 +98,7 @@ const ProjectsSection = () => {
                         key={i}
                         src={sprite}
                         alt={`Sprite ${i + 1}`}
-                        className="w-16 h-16 md:w-24 md:h-24 object-contain drop-shadow-lg hover:scale-110 transition-transform duration-300 flex-shrink-0"
+                        className="w-16 h-16 md:w-24 md:h-24 object-contain drop-shadow-lg flex-shrink-0"
                         style={{ imageRendering: "pixelated" }}
                       />
                     ))}
