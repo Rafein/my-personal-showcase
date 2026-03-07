@@ -11,7 +11,7 @@ const ProjectsSection = () => {
     {
       number: "01",
       type: "GAME",
-      title: lang === "de" ? "Godot Spiel – Gegner Design" : "Godot Game – Enemy Design",
+      title: lang === "de" ? "HSDvania – Godot Game" : "HSDvania – Godot Game",
       description: lang === "de"
         ? "In einem Team-Projekt haben wir ein 2D-Spiel mit Godot entwickelt. Ich war für das Design und die Erstellung der Gegner-Sprites (Aseprite), die Gegner-Logik, das Map-Design und die Lore verantwortlich."
         : "In a team project we developed a 2D game with Godot. I was responsible for designing and creating the enemy sprites (Aseprite), enemy logic, map design and the lore.",
