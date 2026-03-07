@@ -13,8 +13,8 @@ const ProjectsSection = () => {
       type: "GAME",
       title: lang === "de" ? "Godot Spiel – Gegner Design" : "Godot Game – Enemy Design",
       description: lang === "de"
-        ? "In einem Team-Projekt haben wir ein 2D-Spiel mit Godot entwickelt. Ich war für das Design und die Erstellung der Gegner-Sprites verantwortlich, erstellt mit Aseprite."
-        : "In a team project we developed a 2D game with Godot. I was responsible for designing and creating the enemy sprites using Aseprite.",
+        ? "In einem Team-Projekt haben wir ein 2D-Spiel mit Godot entwickelt. Ich war für das Design und die Erstellung der Gegner-Sprites (Aseprite), die Gegner-Logik, das Map-Design und die Lore verantwortlich."
+        : "In a team project we developed a 2D game with Godot. I was responsible for designing and creating the enemy sprites (Aseprite), enemy logic, map design and the lore.",
       tags: ["Godot", "Aseprite", "GDScript", "2D Art"],
       color: "from-primary to-accent",
       sprites: [gegnerFliegend, profSprite, slimePurple],
