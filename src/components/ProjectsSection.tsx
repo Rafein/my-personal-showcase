@@ -1,49 +1,65 @@
-const projects = [
-  {
-    number: "01",
-    type: "WEB APP",
-    title: "Projekt Eins",
-    description: "Eine kurze Beschreibung deines ersten Projekts. Was hast du gebaut und welche Technologien hast du verwendet?",
-    tags: ["React", "TypeScript", "Tailwind"],
-    color: "from-primary to-accent",
-  },
-  {
-    number: "02",
-    type: "MOBILE APP",
-    title: "Projekt Zwei",
-    description: "Beschreibe dein zweites Projekt hier. Was war die Herausforderung und wie hast du sie gelöst?",
-    tags: ["Node.js", "PostgreSQL", "API"],
-    color: "from-accent to-primary",
-  },
-  {
-    number: "03",
-    type: "DESKTOP APP",
-    title: "Projekt Drei",
-    description: "Noch ein spannendes Projekt. Zeige was du kannst und was du gelernt hast.",
-    tags: ["Python", "ML", "Data"],
-    color: "from-primary via-accent to-primary",
-  },
-  {
-    number: "04",
-    type: "WEB APP",
-    title: "Projekt Vier",
-    description: "Ein weiteres Projekt das deine Fähigkeiten demonstriert.",
-    tags: ["Vue", "Firebase", "PWA"],
-    color: "from-accent via-primary to-accent",
-  },
-];
+import { useLanguage } from "@/hooks/use-language";
+import gegnerFliegend from "@/assets/gegner-fliegend.png";
+import profSprite from "@/assets/prof-sprite.png";
+import slimePurple from "@/assets/slime-purple.png";
 
 const ProjectsSection = () => {
+  const { lang, t } = useLanguage();
+
+  const projects = [
+    {
+      number: "01",
+      type: "GAME",
+      title: lang === "de" ? "Godot Spiel – Gegner Design" : "Godot Game – Enemy Design",
+      description: lang === "de"
+        ? "In einem Team-Projekt haben wir ein 2D-Spiel mit Godot entwickelt. Ich war für das Design und die Erstellung der Gegner-Sprites verantwortlich, erstellt mit Aseprite."
+        : "In a team project we developed a 2D game with Godot. I was responsible for designing and creating the enemy sprites using Aseprite.",
+      tags: ["Godot", "Aseprite", "GDScript", "2D Art"],
+      color: "from-primary to-accent",
+      sprites: [gegnerFliegend, profSprite, slimePurple],
+    },
+    {
+      number: "02",
+      type: "MOBILE APP",
+      title: lang === "de" ? "Projekt Zwei" : "Project Two",
+      description: lang === "de"
+        ? "Beschreibe dein zweites Projekt hier. Was war die Herausforderung und wie hast du sie gelöst?"
+        : "Describe your second project here. What was the challenge and how did you solve it?",
+      tags: ["Node.js", "PostgreSQL", "API"],
+      color: "from-accent to-primary",
+    },
+    {
+      number: "03",
+      type: "DESKTOP APP",
+      title: lang === "de" ? "Projekt Drei" : "Project Three",
+      description: lang === "de"
+        ? "Noch ein spannendes Projekt. Zeige was du kannst und was du gelernt hast."
+        : "Another exciting project. Show what you can do and what you've learned.",
+      tags: ["Python", "ML", "Data"],
+      color: "from-primary via-accent to-primary",
+    },
+    {
+      number: "04",
+      type: "WEB APP",
+      title: lang === "de" ? "Projekt Vier" : "Project Four",
+      description: lang === "de"
+        ? "Ein weiteres Projekt das deine Fähigkeiten demonstriert."
+        : "Another project demonstrating your skills.",
+      tags: ["Vue", "Firebase", "PWA"],
+      color: "from-accent via-primary to-accent",
+    },
+  ];
+
   return (
     <section id="projects" className="relative py-32">
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <p className="font-mono text-xs tracking-[0.3em] uppercase text-primary mb-4">Portfolio</p>
           <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-            Featured <span className="text-gradient-accent">Projects</span>
+            {t.projectsSectionTitle} <span className="text-gradient-accent">{t.projectsSectionAccent}</span>
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto">
-            Eine Auswahl an Projekten, die mich als Entwickler geformt haben.
+            {t.projectsSubtitle}
           </p>
           <div className="section-divider mx-auto mt-6" />
         </div>
@@ -57,12 +73,26 @@ const ProjectsSection = () => {
                 <span className="font-mono text-xs tracking-wider text-muted-foreground">{project.type}</span>
               </div>
               <h3 className="font-display text-2xl font-bold text-foreground mb-4">{project.title}</h3>
-              
+
               <div className={`rounded-2xl bg-gradient-to-br ${project.color} p-8 min-h-[220px] flex flex-col justify-between transition-transform duration-500 group-hover:scale-[1.02]`}>
                 <p className="text-primary-foreground text-sm leading-relaxed max-w-xs">
                   {project.description}
                 </p>
-                <div className="w-full h-24 rounded-xl bg-background/10 backdrop-blur-sm mt-4" />
+                {project.sprites ? (
+                  <div className="flex items-end gap-6 mt-4 justify-center">
+                    {project.sprites.map((sprite, i) => (
+                      <img
+                        key={i}
+                        src={sprite}
+                        alt={`Sprite ${i + 1}`}
+                        className="h-16 md:h-20 object-contain drop-shadow-lg hover:scale-125 transition-transform duration-300"
+                        style={{ imageRendering: "pixelated" }}
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  <div className="w-full h-24 rounded-xl bg-background/10 backdrop-blur-sm mt-4" />
+                )}
               </div>
 
               <div className="flex flex-wrap gap-2 mt-4">
