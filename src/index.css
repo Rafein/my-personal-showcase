@@ -6,80 +6,80 @@
 
 @layer base {
   :root {
-    --background: 260 30% 96%;
-    --foreground: 260 20% 15%;
+    --background: 140 20% 96%;
+    --foreground: 160 10% 12%;
 
-    --card: 260 30% 92%;
-    --card-foreground: 260 20% 15%;
+    --card: 140 20% 92%;
+    --card-foreground: 160 10% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 260 20% 15%;
+    --popover-foreground: 160 10% 12%;
 
-    --primary: 270 60% 55%;
+    --primary: 145 60% 42%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 260 25% 88%;
-    --secondary-foreground: 260 20% 25%;
+    --secondary: 0 0% 20%;
+    --secondary-foreground: 0 0% 92%;
 
-    --muted: 260 20% 90%;
-    --muted-foreground: 260 10% 45%;
+    --muted: 140 12% 90%;
+    --muted-foreground: 140 5% 40%;
 
-    --accent: 330 70% 60%;
+    --accent: 160 55% 38%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 260 20% 88%;
-    --input: 260 20% 88%;
-    --ring: 270 60% 55%;
+    --border: 140 15% 88%;
+    --input: 140 15% 88%;
+    --ring: 145 60% 42%;
 
     --radius: 1rem;
 
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 260 20% 15%;
-    --sidebar-primary: 270 60% 55%;
+    --sidebar-foreground: 160 10% 12%;
+    --sidebar-primary: 145 60% 42%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 260 25% 92%;
-    --sidebar-accent-foreground: 260 20% 25%;
-    --sidebar-border: 260 20% 88%;
-    --sidebar-ring: 270 60% 55%;
+    --sidebar-accent: 140 20% 92%;
+    --sidebar-accent-foreground: 160 10% 20%;
+    --sidebar-border: 140 15% 88%;
+    --sidebar-ring: 145 60% 42%;
 
-    --gradient-y2k: linear-gradient(135deg, hsl(260 40% 96%), hsl(300 30% 95%), hsl(260 40% 96%));
-    --gradient-accent: linear-gradient(135deg, hsl(270 60% 55%), hsl(330 70% 60%));
+    --gradient-y2k: linear-gradient(135deg, hsl(140 20% 96%), hsl(160 15% 95%), hsl(140 20% 96%));
+    --gradient-accent: linear-gradient(135deg, hsl(145 60% 42%), hsl(160 55% 38%));
   }
 
   .dark {
-    --background: 260 25% 8%;
-    --foreground: 260 10% 92%;
+    --background: 150 15% 7%;
+    --foreground: 140 10% 92%;
 
-    --card: 260 20% 12%;
-    --card-foreground: 260 10% 92%;
+    --card: 150 12% 11%;
+    --card-foreground: 140 10% 92%;
 
-    --popover: 260 20% 12%;
-    --popover-foreground: 260 10% 92%;
+    --popover: 150 12% 11%;
+    --popover-foreground: 140 10% 92%;
 
-    --primary: 270 70% 65%;
-    --primary-foreground: 260 25% 8%;
+    --primary: 145 65% 50%;
+    --primary-foreground: 150 15% 7%;
 
-    --secondary: 260 20% 18%;
-    --secondary-foreground: 260 10% 80%;
+    --secondary: 0 0% 18%;
+    --secondary-foreground: 0 0% 80%;
 
-    --muted: 260 15% 15%;
-    --muted-foreground: 260 10% 50%;
+    --muted: 150 10% 14%;
+    --muted-foreground: 140 8% 50%;
 
-    --accent: 330 70% 65%;
-    --accent-foreground: 260 25% 8%;
+    --accent: 160 60% 45%;
+    --accent-foreground: 150 15% 7%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 260 15% 20%;
-    --input: 260 15% 20%;
-    --ring: 270 70% 65%;
+    --border: 150 10% 18%;
+    --input: 150 10% 18%;
+    --ring: 145 65% 50%;
 
-    --gradient-y2k: linear-gradient(135deg, hsl(260 25% 8%), hsl(280 20% 12%), hsl(260 25% 8%));
-    --gradient-accent: linear-gradient(135deg, hsl(270 70% 65%), hsl(330 70% 65%));
+    --gradient-y2k: linear-gradient(135deg, hsl(150 15% 7%), hsl(160 12% 10%), hsl(150 15% 7%));
+    --gradient-accent: linear-gradient(135deg, hsl(145 65% 50%), hsl(160 60% 45%));
   }
 }
 
@@ -107,14 +107,14 @@
 
   .glass-card {
     @apply bg-card/60 backdrop-blur-xl border border-border/50 rounded-2xl;
-    box-shadow: 0 8px 32px hsl(270 60% 55% / 0.06);
+    box-shadow: 0 8px 32px hsl(145 60% 42% / 0.06);
   }
 
   .glass-card-hover {
     @apply glass-card transition-all duration-500;
   }
   .glass-card-hover:hover {
-    box-shadow: 0 12px 48px hsl(270 60% 55% / 0.12);
+    box-shadow: 0 12px 48px hsl(145 60% 42% / 0.12);
     transform: translateY(-2px);
   }
 
@@ -124,7 +124,7 @@
   }
 
   .dot-pattern {
-    background-image: radial-gradient(circle, hsl(270 60% 55% / 0.08) 1px, transparent 1px);
+    background-image: radial-gradient(circle, hsl(145 60% 42% / 0.08) 1px, transparent 1px);
     background-size: 24px 24px;
   }
 }
