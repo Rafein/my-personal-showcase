@@ -3,7 +3,6 @@ const AboutSection = () => {
     <section id="about" className="relative py-32">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <p className="font-mono text-xs tracking-[0.3em] uppercase text-primary mb-4">Über mich</p>
           <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6">
             Mehr über <span className="text-gradient-accent">mich</span>
           </h2>
@@ -25,8 +24,8 @@ const AboutSection = () => {
             <div className="w-20 h-20 rounded-2xl bg-secondary flex items-center justify-center text-4xl mb-4">
               🧑‍💻
             </div>
-            <h3 className="font-display text-lg font-bold text-foreground">DEIN NAME</h3>
-            <p className="font-mono text-xs text-muted-foreground tracking-wider mt-1">FULLSTACK DEVELOPER</p>
+            <h3 className="font-display text-lg font-bold text-foreground">Rafein Abdulla</h3>
+            <p className="font-mono text-xs text-muted-foreground tracking-wider mt-1">Medieninformatik Student</p>
           </div>
 
           {/* Craft */}
@@ -45,7 +44,7 @@ const AboutSection = () => {
         {/* Stats row */}
         <div className="grid grid-cols-3 gap-4 max-w-3xl mx-auto mt-8">
           {[
-            { number: "20+", label: "Projekte" },
+            { number: "5+", label: "Projekte" },
             { number: "10+", label: "Technologien" },
             { number: "∞", label: "Motivation" },
           ].map((stat, i) => (
