@@ -92,13 +92,13 @@ const ProjectsSection = () => {
                   {project.description}
                 </p>
                 {project.sprites ? (
-                  <div className="flex items-end gap-4 mt-4 justify-center overflow-hidden">
+                  <div className="flex items-end gap-4 mt-4 justify-center p-4">
                     {project.sprites.map((sprite, i) => (
                       <img
                         key={i}
                         src={sprite}
                         alt={`Sprite ${i + 1}`}
-                        className="w-16 h-16 md:w-24 md:h-24 object-contain drop-shadow-lg flex-shrink-0"
+                        className="w-16 h-16 md:w-24 md:h-24 object-contain drop-shadow-lg flex-shrink-0 hover:scale-110 transition-transform duration-300"
                         style={{ imageRendering: "pixelated" }}
                       />
                     ))}
