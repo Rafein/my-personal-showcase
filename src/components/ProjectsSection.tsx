@@ -74,18 +74,18 @@ const ProjectsSection = () => {
               </div>
               <h3 className="font-display text-2xl font-bold text-foreground mb-4">{project.title}</h3>
 
-              <div className={`rounded-2xl bg-gradient-to-br ${project.color} p-8 min-h-[220px] flex flex-col justify-between transition-transform duration-500 group-hover:scale-[1.02]`}>
+              <div className={`rounded-2xl bg-gradient-to-br ${project.color} p-8 min-h-[220px] flex flex-col justify-between transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden`}>
                 <p className="text-primary-foreground text-sm leading-relaxed max-w-xs">
                   {project.description}
                 </p>
                 {project.sprites ? (
-                  <div className="flex items-end gap-6 mt-4 justify-center">
+                  <div className="flex items-end gap-4 mt-4 justify-center overflow-hidden">
                     {project.sprites.map((sprite, i) => (
                       <img
                         key={i}
                         src={sprite}
                         alt={`Sprite ${i + 1}`}
-                        className="h-16 md:h-20 object-contain drop-shadow-lg hover:scale-125 transition-transform duration-300"
+                        className="w-16 h-16 md:w-24 md:h-24 object-contain drop-shadow-lg hover:scale-110 transition-transform duration-300 flex-shrink-0"
                         style={{ imageRendering: "pixelated" }}
                       />
                     ))}
