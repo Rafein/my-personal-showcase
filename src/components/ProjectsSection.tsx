@@ -18,6 +18,7 @@ const ProjectsSection = () => {
       tags: ["Godot", "Aseprite", "GDScript", "2D Art"],
       color: "from-primary to-accent",
       sprites: [gegnerFliegend, profSprite, slimePurple],
+      link: "https://github.com/Ka1serM/HSDvania",
     },
     {
       number: "02",
