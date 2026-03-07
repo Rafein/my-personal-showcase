@@ -89,10 +89,12 @@ const translations = {
   },
 } as const;
 
+type Translations = typeof translations.de | typeof translations.en;
+
 const LanguageContext = createContext<{
   lang: Language;
   toggleLang: () => void;
-  t: (typeof translations)["de"];
+  t: Translations;
 }>({ lang: "de", toggleLang: () => {}, t: translations.de });
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
