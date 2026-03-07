@@ -73,7 +73,12 @@ const ProjectsSection = () => {
                 <span className="w-8 h-px bg-border" />
                 <span className="font-mono text-xs tracking-wider text-muted-foreground">{project.type}</span>
               </div>
-              <h3 className="font-display text-2xl font-bold text-foreground mb-4">{project.title}</h3>
+              <div className="flex items-center gap-2">
+                <h3 className="font-display text-2xl font-bold text-foreground">{project.title}</h3>
+                {project.number === "01" && (
+                  <img src={godotIcon} alt="Godot" className="w-7 h-7 object-contain" />
+                )}
+              </div>
 
               <div className={`rounded-2xl bg-gradient-to-br ${project.color} p-8 min-h-[220px] flex flex-col justify-between transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden`}>
                 <p className="text-primary-foreground text-sm leading-relaxed max-w-xs">
