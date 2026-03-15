@@ -3,6 +3,7 @@ import gegnerFliegend from "@/assets/gegner-fliegend.png";
 import profSprite from "@/assets/prof-sprite.png";
 import slimePurple from "@/assets/slime-purple.png";
 import godotIcon from "@/assets/godot-icon.png";
+import myhsdLogo from "@/assets/myhsd-logo.png";
 
 const ProjectsSection = () => {
   const { lang, t } = useLanguage();
@@ -84,6 +85,9 @@ const ProjectsSection = () => {
                 )}
                 {project.number === "01" && (
                   <img src={godotIcon} alt="Godot" className="w-7 h-7 object-contain" />
+                )}
+                {project.number === "02" && (
+                  <img src={myhsdLogo} alt="myHSD" className="w-10 h-7 object-contain" />
                 )}
               </div>
 
