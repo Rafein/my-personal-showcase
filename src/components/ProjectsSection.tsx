@@ -31,6 +31,7 @@ const ProjectsSection = () => {
         : "A React-based Progressive Web App with NestJS API and Docker deployment. The application supports students at Hochschule Düsseldorf in organizing their academic life. I contributed to the further development of the project under the supervision of Prof. Dr. Thomas Franz.",
       tags: ["React", "NestJS", "Docker", "GitLab CI/CD", "ESLint", "Prettier"],
       color: "from-accent to-primary",
+      mockup: myhsdMockup,
     },
     {
       number: "03",
