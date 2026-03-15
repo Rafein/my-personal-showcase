@@ -86,6 +86,9 @@ const ProjectsSection = () => {
                 {project.number === "01" && (
                   <img src={godotIcon} alt="Godot" className="w-7 h-7 object-contain" />
                 )}
+                {project.number === "02" && (
+                  <img src={myhsdLogo} alt="myHSD" className="w-10 h-7 object-contain" />
+                )}
               </div>
 
               <div className={`rounded-2xl bg-gradient-to-br ${project.color} p-8 min-h-[220px] flex flex-col justify-between transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden`}>
