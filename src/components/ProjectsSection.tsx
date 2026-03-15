@@ -3,6 +3,7 @@ import gegnerFliegend from "@/assets/gegner-fliegend.png";
 import profSprite from "@/assets/prof-sprite.png";
 import slimePurple from "@/assets/slime-purple.png";
 import godotIcon from "@/assets/godot-icon.png";
+import myhsdLogo from "@/assets/myhsd-logo.png";
 
 const ProjectsSection = () => {
   const { lang, t } = useLanguage();
