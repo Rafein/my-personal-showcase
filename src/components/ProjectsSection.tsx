@@ -24,7 +24,7 @@ const ProjectsSection = () => {
     {
       number: "02",
       type: "WEB APP",
-      title: lang === "de" ? "myHSD – Progressive Web App 🚀" : "myHSD – Progressive Web App 🚀",
+      title: lang === "de" ? "myHSD – Progressive Web App" : "myHSD – Progressive Web App",
       description: lang === "de"
         ? "Eine React-basierte Progressive Web App mit NestJS-API und Docker-Deployment. Die Anwendung unterstützt Studierende der Hochschule Düsseldorf bei der Organisation ihres Studienalltags. Ich war an der Weiterentwicklung des Projekts unter der Leitung von Prof. Dr. Thomas Franz beteiligt."
         : "A React-based Progressive Web App with NestJS API and Docker deployment. The application supports students at Hochschule Düsseldorf in organizing their academic life. I contributed to the further development of the project under the supervision of Prof. Dr. Thomas Franz.",
