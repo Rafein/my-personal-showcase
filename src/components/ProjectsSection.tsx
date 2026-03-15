@@ -109,6 +109,16 @@ const ProjectsSection = () => {
                       />
                     ))}
                   </div>
+                ) : project.mockup ? (
+                  <div className="flex justify-center mt-4">
+                    <div className="relative w-28 md:w-36 rounded-2xl border-2 border-foreground/20 bg-background/10 shadow-2xl overflow-hidden">
+                      <img
+                        src={project.mockup}
+                        alt="App Mockup"
+                        className="w-full h-auto object-cover"
+                      />
+                    </div>
+                  </div>
                 ) : (
                   <div className="w-full h-24 rounded-xl bg-background/10 backdrop-blur-sm mt-4" />
                 )}
