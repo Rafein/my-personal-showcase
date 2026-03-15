@@ -4,6 +4,7 @@ import profSprite from "@/assets/prof-sprite.png";
 import slimePurple from "@/assets/slime-purple.png";
 import godotIcon from "@/assets/godot-icon.png";
 import myhsdLogo from "@/assets/myhsd-logo.png";
+import myhsdMockup from "@/assets/myhsd-mockup.png";
 
 const ProjectsSection = () => {
   const { lang, t } = useLanguage();
@@ -30,6 +31,7 @@ const ProjectsSection = () => {
         : "A React-based Progressive Web App with NestJS API and Docker deployment. The application supports students at Hochschule Düsseldorf in organizing their academic life. I contributed to the further development of the project under the supervision of Prof. Dr. Thomas Franz.",
       tags: ["React", "NestJS", "Docker", "GitLab CI/CD", "ESLint", "Prettier"],
       color: "from-accent to-primary",
+      mockup: myhsdMockup,
     },
     {
       number: "03",
@@ -106,6 +108,16 @@ const ProjectsSection = () => {
                         style={{ imageRendering: "pixelated" }}
                       />
                     ))}
+                  </div>
+                ) : project.mockup ? (
+                  <div className="flex justify-center mt-4">
+                    <div className="relative w-28 md:w-36 rounded-2xl border-2 border-foreground/20 bg-background/10 shadow-2xl overflow-hidden">
+                      <img
+                        src={project.mockup}
+                        alt="App Mockup"
+                        className="w-full h-auto object-cover"
+                      />
+                    </div>
                   </div>
                 ) : (
                   <div className="w-full h-24 rounded-xl bg-background/10 backdrop-blur-sm mt-4" />
