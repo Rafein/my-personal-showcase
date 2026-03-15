@@ -22,12 +22,12 @@ const ProjectsSection = () => {
     },
     {
       number: "02",
-      type: "MOBILE APP",
-      title: lang === "de" ? "Projekt Zwei" : "Project Two",
+      type: "WEB APP",
+      title: lang === "de" ? "myHSD – Progressive Web App 🚀" : "myHSD – Progressive Web App 🚀",
       description: lang === "de"
-        ? "Beschreibe dein zweites Projekt hier. Was war die Herausforderung und wie hast du sie gelöst?"
-        : "Describe your second project here. What was the challenge and how did you solve it?",
-      tags: ["Node.js", "PostgreSQL", "API"],
+        ? "Eine React-basierte Progressive Web App mit NestJS-API und Docker-Deployment. Die Anwendung unterstützt Studierende der Hochschule Düsseldorf bei der Organisation ihres Studienalltags. Ich war an der Weiterentwicklung des Projekts unter der Leitung von Prof. Dr. Thomas Franz beteiligt."
+        : "A React-based Progressive Web App with NestJS API and Docker deployment. The application supports students at Hochschule Düsseldorf in organizing their academic life. I contributed to the further development of the project under the supervision of Prof. Dr. Thomas Franz.",
+      tags: ["React", "NestJS", "Docker", "GitLab CI/CD", "ESLint", "Prettier"],
       color: "from-accent to-primary",
     },
     {
