@@ -17,7 +17,7 @@ const OtherSection = () => {
 
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           <div className="glass-card-hover p-8">
-            <h3 className="font-display text-xl font-bold text-foreground mb-4">🎨 {t.otherHobbies}</h3>
+            <h3 className="font-display text-xl font-bold text-foreground mb-4">{t.otherHobbies}</h3>
             <ul className="space-y-3 text-muted-foreground text-sm">
               {t.hobbies.map((hobby) => (
                 <li key={hobby} className="flex items-center gap-3">
@@ -29,19 +29,19 @@ const OtherSection = () => {
           </div>
 
           <div className="glass-card-hover p-8">
-            <h3 className="font-display text-xl font-bold text-foreground mb-4">📬 {t.otherContact}</h3>
+            <h3 className="font-display text-xl font-bold text-foreground mb-4">{t.otherContact}</h3>
             <ul className="space-y-3 text-muted-foreground text-sm">
               <li className="flex items-center gap-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                email@beispiel.de
+                <a href="mailto:Rafeinab@outlook.de">Rafeinab@outlook.de</a>
               </li>
               <li className="flex items-center gap-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                GitHub: /dein-username
+                <a href="https://github.com/Rafein" target="_blank">GitHub</a>
               </li>
               <li className="flex items-center gap-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                LinkedIn: /in/dein-profil
+                <a href="https://www.linkedin.com/in/rafein-abdulla-824149376/" target="_blank">LinkedIn</a>
               </li>
             </ul>
           </div>
@@ -51,7 +51,7 @@ const OtherSection = () => {
               <span className="w-3 h-3 rounded-full bg-green-500 animate-pulse" />
               <span className="text-sm text-foreground font-medium">{t.otherAvailable}</span>
             </div>
-            <span className="font-mono text-xs text-muted-foreground">🇩🇪 Deutschland</span>
+            <span className="font-mono text-xs text-muted-foreground">Deutschland</span>
           </div>
         </div>
 

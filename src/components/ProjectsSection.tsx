@@ -5,9 +5,12 @@ import slimePurple from "@/assets/slime-purple.png";
 import godotIcon from "@/assets/godot-icon.png";
 import myhsdLogo from "@/assets/myhsd-logo.png";
 import myhsdMockup from "@/assets/myhsd-mockup.png";
+import woIstFhidoProject from "@/assets/wo-ist-fhido-project.png";
+import { useState } from "react";
 
 const ProjectsSection = () => {
   const { lang, t } = useLanguage();
+  const [hoveredMediaProject, setHoveredMediaProject] = useState<string | null>(null);
 
   const projects = [
     {
@@ -27,21 +30,22 @@ const ProjectsSection = () => {
       type: "WEB APP",
       title: lang === "de" ? "myHSD – Progressive Web App" : "myHSD – Progressive Web App",
       description: lang === "de"
-        ? "Eine React-basierte Progressive Web App mit NestJS-API und Docker-Deployment. Die Anwendung unterstützt Studierende der Hochschule Düsseldorf bei der Organisation ihres Studienalltags. Ich war an der Weiterentwicklung des Projekts unter der Leitung von Prof. Dr. Thomas Franz beteiligt."
-        : "A React-based Progressive Web App with NestJS API and Docker deployment. The application supports students at Hochschule Düsseldorf in organizing their academic life. I contributed to the further development of the project under the supervision of Prof. Dr. Thomas Franz.",
+        ? "Eine React-basierte Progressive Web App mit NestJS-API und Docker-Deployment. Die Anwendung unterstützt Studierende der Hochschule Düsseldorf bei der Organisation ihres Studienalltags. Mit einem Team, war ich an der Weiterentwicklung des Projekts unter der Leitung von Prof. Dr. Thomas Franz beteiligt."
+        : "A React-based Progressive Web App with NestJS API and Docker deployment. The application supports students at Hochschule Düsseldorf in organizing their academic life. With a Team, I contributed to the further development of the project under the supervision of Prof. Dr. Thomas Franz.",
       tags: ["React", "NestJS", "Docker", "GitLab CI/CD", "ESLint", "Prettier"],
       color: "from-accent to-primary",
       mockup: myhsdMockup,
     },
     {
       number: "03",
-      type: "DESKTOP APP",
-      title: lang === "de" ? "Projekt Drei" : "Project Three",
+      type: lang === "de" ? "FILMPROJEKT" : "FILM PROJECT",
+      title: "Wo ist Fhido? – Mockumentary zur HSD",
       description: lang === "de"
-        ? "Noch ein spannendes Projekt. Zeige was du kannst und was du gelernt hast."
-        : "Another exciting project. Show what you can do and what you've learned.",
-      tags: ["Python", "ML", "Data"],
+        ? "Im Rahmen eines Hochschulprojekts entstand dieser satirische Dokumentarfilm über das plötzliche Verschwinden des Maskottchens der Hochschule Düsseldorf. Ich war in Drehbuchentwicklung, Regie, Schauspiel und Postproduktion eingebunden."
+        : "This satirical documentary was created as part of a university project about the sudden disappearance of Hochschule Duesseldorf's mascot. I contributed to script development, directing, acting and post-production.",
+      tags: ["Filmgestaltung", "DaVinci Resolve", "Premiere", "Photoshop"],
       color: "from-primary via-accent to-primary",
+      mockup: woIstFhidoProject,
     },
     {
       number: "04",
@@ -93,34 +97,42 @@ const ProjectsSection = () => {
                 )}
               </div>
 
-              <div className={`rounded-2xl bg-gradient-to-br ${project.color} p-8 min-h-[220px] flex flex-col justify-between transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden`}>
-                <p className="text-primary-foreground text-sm leading-relaxed max-w-xs">
+              <div className={`relative rounded-2xl bg-gradient-to-br ${project.color} p-8 min-h-[220px] flex flex-col justify-between transition-transform duration-500 hover:scale-[1.02] overflow-hidden`}>
+                <div className={`absolute inset-0 transition-colors duration-300 ${hoveredMediaProject === project.number ? "bg-black/10" : "bg-black/0"}`} />
+
+                <p className="relative z-10 text-primary-foreground text-sm leading-relaxed max-w-xs">
                   {project.description}
                 </p>
                 {project.sprites ? (
-                  <div className="flex items-end gap-4 mt-4 justify-center p-4">
+                  <div className="relative z-10 flex items-end gap-4 mt-4 justify-center p-4">
                     {project.sprites.map((sprite, i) => (
                       <img
                         key={i}
                         src={sprite}
                         alt={`Sprite ${i + 1}`}
                         className="w-16 h-16 md:w-24 md:h-24 object-contain drop-shadow-lg flex-shrink-0 hover:scale-110 transition-transform duration-300"
+                        onMouseEnter={() => setHoveredMediaProject(project.number)}
+                        onMouseLeave={() => setHoveredMediaProject(null)}
                         style={{ imageRendering: "pixelated" }}
                       />
                     ))}
                   </div>
                 ) : project.mockup ? (
-                  <div className="flex justify-center mt-4">
-                    <div className="relative w-28 md:w-36 rounded-2xl border-2 border-foreground/20 bg-background/10 shadow-2xl overflow-hidden">
+                  <div className="relative z-10 flex justify-center mt-4">
+                    <div
+                      className="relative w-28 md:w-36"
+                      onMouseEnter={() => setHoveredMediaProject(project.number)}
+                      onMouseLeave={() => setHoveredMediaProject(null)}
+                    >
                       <img
                         src={project.mockup}
                         alt="App Mockup"
-                        className="w-full h-auto object-cover"
+                        className="w-full h-auto object-cover transition-transform duration-300 hover:scale-110"
                       />
                     </div>
                   </div>
                 ) : (
-                  <div className="w-full h-24 rounded-xl bg-background/10 backdrop-blur-sm mt-4" />
+                  <div className="relative z-10 w-full h-24 rounded-xl bg-background/10 backdrop-blur-sm mt-4" />
                 )}
               </div>
 

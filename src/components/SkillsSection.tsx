@@ -11,10 +11,10 @@ const techStack = [
   { name: "OracleSQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg", size: "sm" },
   { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg", size: "sm" },
   { name: "Figma", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg", size: "sm" },
-  { name: "InDesign", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-plain.svg", size: "sm" },
-  { name: "Photoshop", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg", size: "sm" },
-  { name: "Premiere", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/premierepro/premierepro-plain.svg", size: "sm" },
-  { name: "Cisco", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/networkx/networkx-original.svg", size: "sm" },
+  { name: "InDesign", logo: "/src/assets/adobe-indesign-cc-icon.svg", size: "sm" },
+  { name: "Photoshop", logo: "/src/assets/adobe-photoshop-2.svg", size: "sm" },
+  { name: "Premiere", logo: "src/assets/premiere-pro-cc.svg", size: "sm" },
+  { name: "Cisco", logo: "src/assets/cisco-2.svg", size: "sm" },
 ];
 
 const sizeMap = {

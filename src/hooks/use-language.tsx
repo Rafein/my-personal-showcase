@@ -41,12 +41,12 @@ const translations = {
     // Other
     otherTitle: "More to",
     otherAccent: "Explore",
-    otherSubtitle: "Zusätzliche Ressourcen und Kontaktmöglichkeiten",
+    otherSubtitle: "Weiteres und Kontaktmöglichkeiten",
     otherHobbies: "Hobbies",
     otherContact: "Kontakt",
     otherAvailable: "Offen für Zusammenarbeit & Freelance",
     otherFooter: "© 2026 Rafein Abdulla. Mit Leidenschaft gebaut.",
-    hobbies: ["Fotografie", "Open Source Beiträge", "Gaming", "Lesen"],
+    hobbies: ["Gittare Spielen", "Gym", "Gaming", "Lesen"],
   },
   en: {
     navHome: "Home",
@@ -85,7 +85,7 @@ const translations = {
     otherContact: "Contact",
     otherAvailable: "Open for collaboration & freelance",
     otherFooter: "© 2026 Rafein Abdulla. Built with passion.",
-    hobbies: ["Photography", "Open Source Contributions", "Gaming", "Reading"],
+    hobbies: ["playing Guitar", "Gym", "Gaming", "Reading"],
   },
 } as const;
 

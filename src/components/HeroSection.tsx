@@ -16,11 +16,6 @@ const HeroSection = () => {
           <span className={lang === "en" ? "text-primary font-bold" : "text-muted-foreground"}>EN</span>
         </button>
 
-        {/* Avatar placeholder */}
-        <div className="w-28 h-28 mx-auto mb-8 rounded-full bg-secondary border-4 border-primary/20 flex items-center justify-center text-5xl animate-float">
-          👨‍💻
-        </div>
-
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight mb-4 animate-fade-in-up">
           {t.heroGreeting}{" "}
           <span className="text-gradient-accent">Rafein Abdulla</span>
@@ -34,14 +29,13 @@ const HeroSection = () => {
         <div className="glass-card p-8 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { emoji: "🎓", label: t.heroStudent },
-              { emoji: "💻", label: t.heroDeveloper },
-              { emoji: "🚀", label: t.heroCreator },
-              { emoji: "🌍", label: t.heroCountry },
+              { label: t.heroStudent },
+              { label: t.heroDeveloper },
+              { label: t.heroCreator },
+              { label: t.heroCountry },
             ].map((item) => (
-              <div key={item.label} className="text-center">
-                <span className="text-2xl block mb-1">{item.emoji}</span>
-                <span className="text-xs font-medium text-muted-foreground">{item.label}</span>
+              <div key={item.label} className="text-center rounded-2xl border border-border/60 bg-background/40 px-4 py-5">
+                <span className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">{item.label}</span>
               </div>
             ))}
           </div>
