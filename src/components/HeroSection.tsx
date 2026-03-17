@@ -34,7 +34,11 @@ const HeroSection = () => {
               { label: t.heroCreator },
               { label: t.heroCountry },
             ].map((item) => (
-              <div key={item.label} className="text-center rounded-2xl border border-border/60 bg-background/40 px-4 py-5">
+              <div
+                key={item.label}
+                data-cursor="interactive"
+                className="text-center rounded-2xl border border-border/60 bg-background/40 px-4 py-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:bg-background/75 hover:shadow-[0_12px_30px_hsl(145_60%_42%_/_0.10)]"
+              >
                 <span className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">{item.label}</span>
               </div>
             ))}
