@@ -33,7 +33,7 @@ const OtherSection = () => {
             <ul className="space-y-3 text-muted-foreground text-sm">
               <li className="flex items-center gap-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                <a href="mailto:Rafeinab@outlook.de">Rafeinab@outlook.de</a>
+                <a href="mailto:DevRafeinAbdulla@outlook.com">DevRafeinAbdulla@outlook.com</a>
               </li>
               <li className="flex items-center gap-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent" />
