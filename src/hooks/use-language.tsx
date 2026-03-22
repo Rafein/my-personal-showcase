@@ -53,8 +53,15 @@ const translations = {
     otherSubtitle: "Weiteres und Kontaktmoeglichkeiten",
     otherHobbies: "Hobbies",
     otherContact: "Kontakt",
+    otherImprint: "Impressum",
+    otherImprintLink: "Zur Impressum-Seite",
+    otherImprintName: "Name",
+    otherImprintAddress: "Adresse",
+    otherImprintEmail: "E-Mail",
     otherAvailable: "Offen fuer Zusammenarbeit & Freelance",
     otherFooter: "(c) 2026 Rafein Abdulla. Mit Leidenschaft gebaut.",
+    otherFooterDisclaimer:
+      "© All rights reserved. All trademarks, logos, and brand names featured on this website are the property of their respective owners. Their use is for informational and illustrative purposes only and does not imply any affiliation, endorsement, or sponsorship.",
     hobbies: ["Gitarre spielen", "Gym", "Gaming", "Lesen"],
   },
   en: {
@@ -101,8 +108,15 @@ const translations = {
     otherSubtitle: "Additional resources and contact options",
     otherHobbies: "Hobbies",
     otherContact: "Contact",
+    otherImprint: "Legal Notice",
+    otherImprintLink: "Open legal notice page",
+    otherImprintName: "Name",
+    otherImprintAddress: "Address",
+    otherImprintEmail: "Email",
     otherAvailable: "Open for collaboration & freelance",
     otherFooter: "(c) 2026 Rafein Abdulla. Built with passion.",
+    otherFooterDisclaimer:
+      "© All rights reserved. All trademarks, logos, and brand names featured on this website are the property of their respective owners. Their use is for informational and illustrative purposes only and does not imply any affiliation, endorsement, or sponsorship.",
     hobbies: ["Playing guitar", "Gym", "Gaming", "Reading"],
   },
 } as const;

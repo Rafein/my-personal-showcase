@@ -1,4 +1,5 @@
 import { useLanguage } from "@/hooks/use-language";
+import { Link } from "react-router-dom";
 
 const OtherSection = () => {
   const { t } = useLanguage();
@@ -53,10 +54,19 @@ const OtherSection = () => {
             </div>
             <span className="font-mono text-xs text-muted-foreground">Deutschland</span>
           </div>
+
         </div>
 
         <div className="text-center mt-24 pt-8 border-t border-border">
           <p className="text-muted-foreground text-sm">{t.otherFooter}</p>
+          <p className="text-muted-foreground/80 text-xs max-w-3xl mx-auto mt-3 leading-6">
+            {t.otherFooterDisclaimer}
+          </p>
+          <div className="mt-3">
+            <Link to="/impressum" className="text-sm text-primary underline underline-offset-4 hover:text-primary/80">
+              {t.otherImprintLink}
+            </Link>
+          </div>
         </div>
       </div>
     </section>
