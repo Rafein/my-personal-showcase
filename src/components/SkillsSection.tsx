@@ -1,4 +1,8 @@
 import { useEffect, useRef, useState } from "react";
+import indesignIcon from "@/assets/adobe-indesign-cc-icon.svg";
+import photoshopIcon from "@/assets/adobe-photoshop-2.svg";
+import premiereIcon from "@/assets/premiere-pro-cc.svg";
+import ciscoIcon from "@/assets/cisco-2.svg";
 
 const techStack = [
   { name: "HTML", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", size: "lg" },
@@ -11,10 +15,10 @@ const techStack = [
   { name: "OracleSQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg", size: "sm" },
   { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg", size: "sm" },
   { name: "Figma", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg", size: "sm" },
-  { name: "InDesign", logo: "/src/assets/adobe-indesign-cc-icon.svg", size: "sm" },
-  { name: "Photoshop", logo: "/src/assets/adobe-photoshop-2.svg", size: "sm" },
-  { name: "Premiere", logo: "src/assets/premiere-pro-cc.svg", size: "sm" },
-  { name: "Cisco", logo: "src/assets/cisco-2.svg", size: "sm" },
+  { name: "InDesign", logo: indesignIcon, size: "sm" },
+  { name: "Photoshop", logo: photoshopIcon, size: "sm" },
+  { name: "Premiere", logo: premiereIcon, size: "sm" },
+  { name: "Cisco", logo: ciscoIcon, size: "sm" },
 ];
 
 const sizeMap = {
