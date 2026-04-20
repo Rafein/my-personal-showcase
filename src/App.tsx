@@ -12,6 +12,16 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+const routerBase = (() => {
+  const baseUrl = import.meta.env.BASE_URL;
+
+  if (baseUrl === "/") {
+    return "/";
+  }
+
+  return window.location.pathname.startsWith(baseUrl) ? baseUrl : "/";
+})();
+
 const App = () => (
   <ThemeProvider>
     <LanguageProvider>
@@ -20,7 +30,7 @@ const App = () => (
           <CustomCursor />
           <Toaster />
           <Sonner />
-          <BrowserRouter basename={import.meta.env.BASE_URL}>
+          <BrowserRouter basename={routerBase}>
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/impressum" element={<Imprint />} />
