@@ -123,6 +123,14 @@
     @apply w-10 h-px;
     background: hsl(var(--foreground) / 0.18);
   }
+
+  .scrollbar-hide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 html {

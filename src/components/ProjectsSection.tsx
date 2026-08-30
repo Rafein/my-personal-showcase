@@ -66,8 +66,8 @@ const ProjectsSection = () => {
           ? "Teamprojekt im Modul User Research: Wir haben untersucht, ob chromatische, monochrome und achromatische Farbschemata die Aufmerksamkeit und Zufriedenheit von Usern beeinflussen - getestet an zwei Prototypen."
           : "Team project in the User Research module: we tested whether chromatic, monochrome and achromatic color schemes affect user attention and satisfaction - validated with two prototypes.",
       tags: ["User Research", "Content Analysis", "Prototyping", "Color Psychology"],
-      color: "bg-foreground",
-      textClass: "text-background",
+      color: "bg-slate-800",
+      textClass: "text-slate-50",
       protoLinks: [
         { label: "Kalender-App", href: "https://www.figma.com/make/xGXHMhZwhBIldtC1mKVjDs/KalenderApp?t=wMZWf4GzPWULDsPV-1" },
         { label: "Online-Shop", href: "https://www.figma.com/make/vri7jbcH7ooSCpPxoWeHdw/iPhone-16-Product-Shop?fullscreen=1&t=42HK7aW9o8zFsjJ7-1" },
@@ -191,7 +191,7 @@ const ProjectsSection = () => {
                         href={proto.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`inline-flex items-center gap-1.5 rounded-lg border border-background/25 bg-background/10 px-3 py-1.5 text-xs font-medium ${project.textClass} transition-colors hover:bg-background/20`}
+                        className={`inline-flex items-center gap-1.5 rounded-lg border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-medium ${project.textClass} transition-colors hover:bg-white/20`}
                       >
                         {proto.label}
                         <ExternalLink size={12} />
