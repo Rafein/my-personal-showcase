@@ -13,6 +13,7 @@ const Navbar = () => {
     { id: "Home", label: t.navHome, section: "home" },
     { id: "About", label: t.navAbout, section: "about" },
     { id: "Projects", label: t.navProjects, section: "projects" },
+    { id: "Research", label: t.navResearch, section: "research" },
     { id: "Skills", label: t.navSkills, section: "skills" },
     { id: "Other", label: t.navOther, section: "other" },
   ];
