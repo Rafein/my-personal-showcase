@@ -8,6 +8,9 @@ import godotIcon from "@/assets/godot-icon.png";
 import myhsdLogo from "@/assets/myhsd-logo.png";
 import myhsdMockup from "@/assets/myhsd-mockup.png";
 import woIstFhidoProject from "@/assets/wo-ist-fhido-project.png";
+import smileyChromatic from "@/assets/smiley-chromatic.svg";
+import smileyMonochrome from "@/assets/smiley-monochrome.svg";
+import smileyAchromatic from "@/assets/smiley-achromatic.svg";
 
 const ProjectsSection = () => {
   const { lang, t } = useLanguage();
@@ -115,20 +118,44 @@ const ProjectsSection = () => {
                 )}
               </div>
 
-              <div
-                className={`relative flex min-h-[220px] flex-col justify-between overflow-hidden rounded-lg ${project.color} p-8 transition-transform duration-500 hover:scale-[1.01]`}
-              >
+              <div className="relative">
+                {project.number === "04" && (
+                  <>
+                    <img
+                      src={smileyChromatic}
+                      alt=""
+                      aria-hidden="true"
+                      className="pointer-events-none absolute -top-6 -right-6 z-0 h-16 w-16 rotate-12 drop-shadow-md"
+                    />
+                    <img
+                      src={smileyAchromatic}
+                      alt=""
+                      aria-hidden="true"
+                      className="pointer-events-none absolute -top-5 -left-7 z-0 h-12 w-12 -rotate-6 drop-shadow-md dark:invert"
+                    />
+                    <img
+                      src={smileyMonochrome}
+                      alt=""
+                      aria-hidden="true"
+                      className="pointer-events-none absolute -bottom-6 -left-4 z-0 h-14 w-14 rotate-6 drop-shadow-md"
+                    />
+                  </>
+                )}
+
                 <div
-                  className={`absolute inset-0 transition-colors duration-300 ${
-                    hoveredMediaProject === project.number ? "bg-black/10" : "bg-black/0"
-                  }`}
-                />
+                  className={`relative z-10 flex min-h-[220px] flex-col justify-between overflow-hidden rounded-lg ${project.color} p-8 transition-transform duration-500 hover:scale-[1.01]`}
+                >
+                  <div
+                    className={`absolute inset-0 transition-colors duration-300 ${
+                      hoveredMediaProject === project.number ? "bg-black/10" : "bg-black/0"
+                    }`}
+                  />
 
-                <p className={`relative z-10 max-w-xs text-sm leading-relaxed ${project.textClass}`}>
-                  {project.description}
-                </p>
+                  <p className={`relative z-10 max-w-xs text-sm leading-relaxed ${project.textClass}`}>
+                    {project.description}
+                  </p>
 
-                {project.sprites ? (
+                  {project.sprites ? (
                   <div className="relative z-10 mt-4 flex items-end justify-center gap-4 p-4">
                     {project.sprites.map((sprite, index) => (
                       <img
@@ -172,6 +199,7 @@ const ProjectsSection = () => {
                     ))}
                   </div>
                 ) : null}
+                </div>
               </div>
 
               <div className="mt-4 flex flex-wrap gap-2">
