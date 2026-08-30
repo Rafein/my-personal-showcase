@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ExternalLink } from "lucide-react";
 import { useLanguage } from "@/hooks/use-language";
 import gegnerFliegend from "@/assets/gegner-fliegend.png";
 import profSprite from "@/assets/prof-sprite.png";
@@ -52,6 +53,22 @@ const ProjectsSection = () => {
       color: "bg-accent",
       textClass: "text-accent-foreground",
       mockup: woIstFhidoProject,
+    },
+    {
+      number: "04",
+      type: "UX RESEARCH",
+      title: lang === "de" ? "Farbe & Aufmerksamkeit" : "Color & Attention",
+      description:
+        lang === "de"
+          ? "Teamprojekt im Modul User Research: Wir haben untersucht, ob chromatische, monochrome und achromatische Farbschemata die Aufmerksamkeit und Zufriedenheit von Usern beeinflussen - getestet an zwei Prototypen."
+          : "Team project in the User Research module: we tested whether chromatic, monochrome and achromatic color schemes affect user attention and satisfaction - validated with two prototypes.",
+      tags: ["User Research", "Content Analysis", "Prototyping", "Color Psychology"],
+      color: "bg-foreground",
+      textClass: "text-background",
+      protoLinks: [
+        { label: "Kalender-App", href: "https://www.figma.com/make/xGXHMhZwhBIldtC1mKVjDs/KalenderApp?t=wMZWf4GzPWULDsPV-1" },
+        { label: "Online-Shop", href: "https://www.figma.com/make/vri7jbcH7ooSCpPxoWeHdw/iPhone-16-Product-Shop?fullscreen=1&t=42HK7aW9o8zFsjJ7-1" },
+      ],
     },
   ];
 
@@ -125,7 +142,7 @@ const ProjectsSection = () => {
                       />
                     ))}
                   </div>
-                ) : (
+                ) : project.mockup ? (
                   <div className="relative z-10 mt-4 flex justify-center">
                     <div
                       className="relative w-28 md:w-36"
@@ -139,7 +156,22 @@ const ProjectsSection = () => {
                       />
                     </div>
                   </div>
-                )}
+                ) : project.protoLinks ? (
+                  <div className="relative z-10 mt-4 flex flex-wrap justify-center gap-3">
+                    {project.protoLinks.map((proto) => (
+                      <a
+                        key={proto.label}
+                        href={proto.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`inline-flex items-center gap-1.5 rounded-lg border border-background/25 bg-background/10 px-3 py-1.5 text-xs font-medium ${project.textClass} transition-colors hover:bg-background/20`}
+                      >
+                        {proto.label}
+                        <ExternalLink size={12} />
+                      </a>
+                    ))}
+                  </div>
+                ) : null}
               </div>
 
               <div className="mt-4 flex flex-wrap gap-2">

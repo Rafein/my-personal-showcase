@@ -8,7 +8,6 @@ const translations = {
     navHome: "Home",
     navAbout: "Ueber mich",
     navProjects: "Projekte",
-    navResearch: "Case Study",
     navSkills: "Skills",
     navOther: "Mehr",
     // Hero
@@ -69,7 +68,6 @@ const translations = {
     navHome: "Home",
     navAbout: "About",
     navProjects: "Projects",
-    navResearch: "Case Study",
     navSkills: "Skills",
     navOther: "More",
     heroGreeting: "Hi, I'm",
