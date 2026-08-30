@@ -4,7 +4,7 @@ const HeroSection = () => {
   const { lang, toggleLang, t } = useLanguage();
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden dot-pattern">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="relative z-10 text-center px-6 max-w-3xl mx-auto pt-24">
         {/* Language toggle */}
         <button
@@ -37,7 +37,7 @@ const HeroSection = () => {
               <div
                 key={item.label}
                 data-cursor="interactive"
-                className="text-center rounded-2xl border border-border/60 bg-background/40 px-4 py-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:bg-background/75 hover:shadow-[0_12px_30px_hsl(145_60%_42%_/_0.10)]"
+                className="text-center rounded-lg border border-border/60 bg-background/40 px-4 py-5 transition-all duration-300 hover:-translate-y-1 hover:border-foreground/25 hover:bg-background/75"
               >
                 <span className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">{item.label}</span>
               </div>

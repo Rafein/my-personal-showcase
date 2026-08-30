@@ -16,7 +16,7 @@ const AboutSection = () => {
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="glass-card-hover p-8 md:p-10">
             <div className="mb-6">
-              <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.35em] text-primary">{t.aboutMindset}</p>
+              <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.35em] text-muted-foreground">{t.aboutMindset}</p>
               <h3 className="max-w-md text-2xl font-display font-bold text-foreground md:text-3xl">
                 {t.aboutMindsetText}
               </h3>
@@ -28,14 +28,14 @@ const AboutSection = () => {
             </p>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-[1.75rem] border border-border/60 bg-background/55 p-5">
-                <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.3em] text-primary">{t.aboutFocus}</p>
+              <div className="rounded-lg border border-border/60 bg-background/55 p-5">
+                <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground">{t.aboutFocus}</p>
                 <h4 className="mb-2 font-display text-lg font-bold text-foreground">{t.aboutFocusTitle}</h4>
                 <p className="text-sm leading-relaxed text-muted-foreground">{t.aboutFocusDesc}</p>
               </div>
 
-              <div className="rounded-[1.75rem] border border-border/60 bg-background/55 p-5">
-                <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.3em] text-primary">{t.aboutApproach}</p>
+              <div className="rounded-lg border border-border/60 bg-background/55 p-5">
+                <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground">{t.aboutApproach}</p>
                 <h4 className="mb-2 font-display text-lg font-bold text-foreground">{t.aboutApproachTitle}</h4>
                 <p className="text-sm leading-relaxed text-muted-foreground">{t.aboutApproachDesc}</p>
               </div>
@@ -44,7 +44,7 @@ const AboutSection = () => {
 
           <div className="grid gap-6">
             <div className="glass-card-hover p-8">
-              <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.35em] text-primary">{t.aboutRole}</p>
+              <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.35em] text-muted-foreground">{t.aboutRole}</p>
               <h3 className="text-3xl font-display font-bold leading-tight text-foreground">
                 Rafein Abdulla
               </h3>
@@ -81,7 +81,7 @@ const AboutSection = () => {
 
               <div className="mt-6 grid grid-cols-2 gap-3">
                 {t.aboutAreas.map((area) => (
-                  <div key={area} className="rounded-2xl border border-border/60 bg-background/45 px-4 py-4">
+                  <div key={area} className="rounded-lg border border-border/60 bg-background/45 px-4 py-4">
                     <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">{area}</p>
                   </div>
                 ))}
@@ -92,7 +92,7 @@ const AboutSection = () => {
 
         <div className="mx-auto mt-8 grid max-w-5xl gap-4 md:grid-cols-[1.2fr_0.8fr]">
           <div className="glass-card p-6 md:p-8">
-            <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary">Direction</p>
+            <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground">Direction</p>
             <p className="mt-4 max-w-xl font-display text-2xl font-bold leading-tight text-foreground">
               Ich will digitale Projekte bauen, die klar aussehen, Charakter haben und nicht nach Baukasten wirken.
             </p>

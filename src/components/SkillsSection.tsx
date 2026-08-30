@@ -1,4 +1,8 @@
 import { useEffect, useRef, useState } from "react";
+import ciscoLogo from "@/assets/cisco-2.svg";
+import indesignLogo from "@/assets/adobe-indesign-cc-icon.svg";
+import photoshopLogo from "@/assets/adobe-photoshop-2.svg";
+import premiereLogo from "@/assets/premiere-pro-cc.svg";
 
 const techStack = [
   { name: "HTML", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", size: "lg" },
@@ -11,10 +15,10 @@ const techStack = [
   { name: "OracleSQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg", size: "sm" },
   { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg", size: "sm" },
   { name: "Figma", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg", size: "sm" },
-  { name: "InDesign", logo: "/src/assets/adobe-indesign-cc-icon.svg", size: "sm" },
-  { name: "Photoshop", logo: "/src/assets/adobe-photoshop-2.svg", size: "sm" },
-  { name: "Premiere", logo: "src/assets/premiere-pro-cc.svg", size: "sm" },
-  { name: "Cisco", logo: "src/assets/cisco-2.svg", size: "sm" },
+  { name: "InDesign", logo: indesignLogo, size: "sm" },
+  { name: "Photoshop", logo: photoshopLogo, size: "sm" },
+  { name: "Premiere", logo: premiereLogo, size: "sm" },
+  { name: "Cisco", logo: ciscoLogo, size: "sm" },
 ];
 
 const sizeMap = {
@@ -46,7 +50,7 @@ const SkillsSection = () => {
     <section id="skills" className="relative py-32">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <p className="font-mono text-xs tracking-[0.3em] uppercase text-primary mb-4">Tech Stack</p>
+          <p className="font-mono text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">Tech Stack</p>
           <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6">
             My <span className="text-gradient-accent">Skills</span>
           </h2>
@@ -63,7 +67,7 @@ const SkillsSection = () => {
                 }`}
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
-                <div className={`${sizeMap[tech.size as keyof typeof sizeMap]} rounded-2xl glass-card flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-default`}>
+                <div className={`${sizeMap[tech.size as keyof typeof sizeMap]} rounded-lg glass-card flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-default`}>
                   <img
                     src={tech.logo}
                     alt={tech.name}

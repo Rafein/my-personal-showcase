@@ -8,7 +8,7 @@ const OtherSection = () => {
     <section id="other" className="relative py-32">
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <p className="font-mono text-xs tracking-[0.3em] uppercase text-primary mb-4">{t.navOther}</p>
+          <p className="font-mono text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">{t.navOther}</p>
           <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6">
             {t.otherTitle} <span className="text-gradient-accent">{t.otherAccent}</span>
           </h2>

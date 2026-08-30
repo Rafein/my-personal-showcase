@@ -22,7 +22,8 @@ const ProjectsSection = () => {
           ? "In einem Teamprojekt haben wir ein 2D-Spiel mit Godot entwickelt. Ich war fuer Design, Gegner-Sprites, Gegner-Logik, Map-Design und Lore verantwortlich."
           : "In a team project we developed a 2D game with Godot. I was responsible for design, enemy sprites, enemy logic, map design and the lore.",
       tags: ["Godot", "Aseprite", "GDScript", "2D Art"],
-      color: "from-primary to-accent",
+      color: "bg-primary",
+      textClass: "text-primary-foreground",
       sprites: [gegnerFliegend, profSprite, slimePurple],
       link: "https://github.com/Ka1serM/HSDvania",
     },
@@ -35,7 +36,8 @@ const ProjectsSection = () => {
           ? "Eine React-basierte Progressive Web App mit NestJS-API und Docker-Deployment. Ich war an der Weiterentwicklung des Projekts fuer Studierende der Hochschule Duesseldorf beteiligt."
           : "A React-based progressive web app with a NestJS API and Docker deployment. I contributed to the continued development of the project for students at Hochschule Duesseldorf.",
       tags: ["React", "NestJS", "Docker", "GitLab CI/CD", "ESLint", "Prettier"],
-      color: "from-accent to-primary",
+      color: "bg-secondary",
+      textClass: "text-secondary-foreground",
       mockup: myhsdMockup,
     },
     {
@@ -47,7 +49,8 @@ const ProjectsSection = () => {
           ? "Im Rahmen eines Hochschulprojekts entstand dieser satirische Dokumentarfilm ueber das ploetzliche Verschwinden des Maskottchens der Hochschule Duesseldorf. Ich war in Drehbuch, Regie, Schauspiel und Postproduktion eingebunden."
           : "This satirical documentary was created as part of a university project about the sudden disappearance of Hochschule Duesseldorf's mascot. I contributed to writing, directing, acting and post-production.",
       tags: ["Filmgestaltung", "DaVinci Resolve", "Premiere", "Photoshop"],
-      color: "from-primary via-accent to-primary",
+      color: "bg-accent",
+      textClass: "text-accent-foreground",
       mockup: woIstFhidoProject,
     },
   ];
@@ -56,7 +59,7 @@ const ProjectsSection = () => {
     <section id="projects" className="relative py-32">
       <div className="container relative z-10 mx-auto px-6">
         <div className="mb-16 text-center">
-          <p className="mb-4 font-mono text-xs uppercase tracking-[0.3em] text-primary">Portfolio</p>
+          <p className="mb-4 font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">Portfolio</p>
           <h2 className="mb-4 text-4xl font-display font-bold text-foreground md:text-5xl">
             {t.projectsSectionTitle} <span className="text-gradient-accent">{t.projectsSectionAccent}</span>
           </h2>
@@ -96,7 +99,7 @@ const ProjectsSection = () => {
               </div>
 
               <div
-                className={`relative flex min-h-[220px] flex-col justify-between overflow-hidden rounded-2xl bg-gradient-to-br ${project.color} p-8 transition-transform duration-500 hover:scale-[1.02]`}
+                className={`relative flex min-h-[220px] flex-col justify-between overflow-hidden rounded-lg ${project.color} p-8 transition-transform duration-500 hover:scale-[1.01]`}
               >
                 <div
                   className={`absolute inset-0 transition-colors duration-300 ${
@@ -104,7 +107,7 @@ const ProjectsSection = () => {
                   }`}
                 />
 
-                <p className="relative z-10 max-w-xs text-sm leading-relaxed text-primary-foreground">
+                <p className={`relative z-10 max-w-xs text-sm leading-relaxed ${project.textClass}`}>
                   {project.description}
                 </p>
 
