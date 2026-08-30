@@ -3,6 +3,7 @@ import ciscoLogo from "@/assets/cisco-2.svg";
 import indesignLogo from "@/assets/adobe-indesign-cc-icon.svg";
 import photoshopLogo from "@/assets/adobe-photoshop-2.svg";
 import premiereLogo from "@/assets/premiere-pro-cc.svg";
+import davinciResolveLogo from "@/assets/davinci-resolve.svg";
 
 const techStack = [
   { name: "HTML", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", size: "lg" },
@@ -18,6 +19,7 @@ const techStack = [
   { name: "InDesign", logo: indesignLogo, size: "sm" },
   { name: "Photoshop", logo: photoshopLogo, size: "sm" },
   { name: "Premiere", logo: premiereLogo, size: "sm" },
+  { name: "DaVinci Resolve", logo: davinciResolveLogo, size: "sm", invert: true },
   { name: "Cisco", logo: ciscoLogo, size: "sm" },
 ];
 
@@ -71,7 +73,7 @@ const SkillsSection = () => {
                   <img
                     src={tech.logo}
                     alt={tech.name}
-                    className={`${imgSizeMap[tech.size as keyof typeof imgSizeMap]}`}
+                    className={`${imgSizeMap[tech.size as keyof typeof imgSizeMap]} ${tech.invert ? "dark:invert" : ""}`}
                     loading="lazy"
                   />
                 </div>
