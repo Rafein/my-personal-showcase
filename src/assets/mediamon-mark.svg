@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect x="3" y="3" width="58" height="58" fill="#f6dfda" stroke="#992937" stroke-width="3" />
+  <text
+    x="32"
+    y="47"
+    text-anchor="middle"
+    font-family="'Noto Serif JP', 'Yu Mincho', 'Hiragino Mincho ProN', serif"
+    font-size="42"
+    font-weight="700"
+    fill="#BF2A22"
+  >寿</text>
+</svg>

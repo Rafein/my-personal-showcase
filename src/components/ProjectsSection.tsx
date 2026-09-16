@@ -11,6 +11,10 @@ import woIstFhidoProject from "@/assets/wo-ist-fhido-project.png";
 import smileyChromatic from "@/assets/smiley-chromatic.svg";
 import smileyMonochrome from "@/assets/smiley-monochrome.svg";
 import smileyAchromatic from "@/assets/smiley-achromatic.svg";
+import mediamonMark from "@/assets/mediamon-mark.svg";
+import bauchbindePattern from "@/assets/bauchbinde-pattern.svg";
+import bauchbindeCloudRed from "@/assets/bauchbinde-cloud-red.svg";
+import bauchbindeCloudTeal from "@/assets/bauchbinde-cloud-teal.svg";
 
 const ProjectsSection = () => {
   const { lang, t } = useLanguage();
@@ -73,6 +77,22 @@ const ProjectsSection = () => {
         { label: "Online-Shop", href: "https://www.figma.com/make/vri7jbcH7ooSCpPxoWeHdw/iPhone-16-Product-Shop?fullscreen=1&t=42HK7aW9o8zFsjJ7-1" },
       ],
     },
+    {
+      number: "05",
+      type: lang === "de" ? "DOKUMENTARFILM / EVENTFILM" : "DOCUMENTARY / EVENT FILM",
+      title: "Tag der offenen Tür - HSD 2026",
+      description:
+        lang === "de"
+          ? "Im Rahmen eines Hochschulmoduls hat unser Team zwei Filme zum Tag der offenen Tür der Hochschule Duesseldorf produziert: einen Dokumentarfilm mit Interviews zu Planung, Regie und Teammeetings sowie einen Eventfilm mit Ausschnitten und Einblicken vom Tag selbst."
+          : "As part of a university module, our team produced two films about Hochschule Duesseldorf's open house day: a documentary with interviews on planning, directing and team meetings, and an event film capturing highlights from the day itself.",
+      tags: ["Dokumentarfilm", "Eventfilm", "Regie", "Interviews", "DaVinci Resolve"],
+      color: "bg-[#e4dfe1]",
+      textClass: "text-[#2C2C2C]",
+      filmLinks: [
+        { label: lang === "de" ? "Dokumentarfilm" : "Documentary", href: "#" },
+        { label: lang === "de" ? "Eventfilm" : "Event film", href: "#" },
+      ],
+    },
   ];
 
   return (
@@ -116,6 +136,9 @@ const ProjectsSection = () => {
                 {project.number === "02" && (
                   <img src={myhsdLogo} alt="myHSD" className="h-7 w-10 object-contain" />
                 )}
+                {project.number === "05" && (
+                  <img src={mediamonMark} alt="MEDIAMON" className="h-7 w-7 object-contain" />
+                )}
               </div>
 
               <div className="relative">
@@ -145,6 +168,7 @@ const ProjectsSection = () => {
                 <div
                   className={`relative z-10 flex min-h-[220px] flex-col justify-between overflow-hidden rounded-lg ${project.color} p-8 transition-transform duration-500 hover:scale-[1.01]`}
                 >
+
                   <div
                     className={`absolute inset-0 transition-colors duration-300 ${
                       hoveredMediaProject === project.number ? "bg-black/10" : "bg-black/0"
@@ -197,6 +221,50 @@ const ProjectsSection = () => {
                         <ExternalLink size={12} />
                       </a>
                     ))}
+                  </div>
+                ) : project.filmLinks ? (
+                  <div className="relative z-10 mt-2 flex flex-col items-center gap-5">
+                    {/* Recreation of the animated lower-third ("Bauchbinde") badge I designed for the doc */}
+                    <div className="flex items-center">
+                      <img
+                        src={bauchbindeCloudRed}
+                        alt=""
+                        aria-hidden="true"
+                        className="h-9 w-14 -mr-4 drop-shadow-sm"
+                      />
+                      <div
+                        className="relative z-10 rounded-full border-2 border-[#992937] bg-[#FBF3F1] px-5 py-2.5 text-center shadow-sm"
+                        style={{ backgroundImage: `url(${bauchbindePattern})` }}
+                      >
+                        <p className="flex items-center justify-center gap-1.5 whitespace-nowrap font-badge text-base font-bold uppercase tracking-wide text-[#2C2C2C]">
+                          <span className="text-[#BF2A22]">&#10022;</span>
+                          Tag der offenen Tuer
+                        </p>
+                        <p className="mt-0.5 font-mono text-[9px] uppercase tracking-[0.15em] text-[#992937]">
+                          HSD 2026 &middot; Doku &amp; Eventfilm
+                        </p>
+                      </div>
+                      <img
+                        src={bauchbindeCloudTeal}
+                        alt=""
+                        aria-hidden="true"
+                        className="h-9 w-14 -ml-4 drop-shadow-sm"
+                      />
+                    </div>
+                    <div className="flex flex-wrap justify-center gap-3">
+                      {project.filmLinks.map((film) => (
+                        <a
+                          key={film.label}
+                          href={film.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`inline-flex items-center gap-1.5 rounded-lg border border-[#992937]/25 bg-[#992937]/5 px-3 py-1.5 text-xs font-medium text-[#992937] transition-colors hover:bg-[#992937]/10`}
+                        >
+                          {film.label}
+                          <ExternalLink size={12} />
+                        </a>
+                      ))}
+                    </div>
                   </div>
                 ) : null}
                 </div>

@@ -18,6 +18,7 @@ export default {
         display: ['"Outfit"', 'system-ui', 'sans-serif'],
         body: ['"Outfit"', 'system-ui', 'sans-serif'],
         mono: ['"Space Mono"', 'monospace'],
+        badge: ['"Antonio"', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

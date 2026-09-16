@@ -100,7 +100,7 @@ const AboutSection = () => {
 
           <div className="grid grid-cols-2 gap-4">
             <div className="glass-card p-6 text-center">
-              <span className="text-3xl font-display font-bold text-gradient-accent">3</span>
+              <span className="text-3xl font-display font-bold text-gradient-accent">5</span>
               <p className="mt-1 text-xs text-muted-foreground">{t.aboutProjects}</p>
             </div>
             <div className="glass-card p-6 text-center">
